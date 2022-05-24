@@ -1,0 +1,132 @@
+.app__navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 0;
+}
+
+.app__navbar-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.app__navbar-logo img {
+  cursor: pointer;
+}
+
+.app__navbar-links {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app__navbar-links li {
+  margin: 0 4rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.app__navbar-links li::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  bottom: -5px;
+  left: 0;
+  transition: 0.3s;
+}
+
+.app__navbar-links li:hover:before {
+  width: 100%;
+}
+
+.uil-bars,
+.uil-multiply {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.app__navbar-smallscreen {
+  display: none;
+}
+
+.app__navbar-smallscreen_overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100vh;
+  background: rgb(255, 255, 255, 0.9);
+  transition: 0.5s ease;
+  flex-direction: column;
+  z-index: 5;
+}
+
+.app__navbar-smallscreen_overlay .overlay__close {
+  font-size: 27px;
+  color: var(--dark-primary);
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.app__navbar-smallscreen-links {
+  list-style: none;
+  margin-top: 15rem;
+}
+
+.app__navbar-smallscreen-links li {
+  margin: 3rem;
+
+  cursor: pointer;
+  color: var(--dark-primary);
+  font-size: 2rem;
+  text-align: center;
+
+  position: relative;
+}
+
+.app__navbar-smallscreen-links li::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--dark-primary);
+  bottom: -5px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.3s;
+}
+
+.app__navbar-smallscreen-links li:hover:after {
+  width: 20%;
+}
+
+@media (max-width: 1150px) {
+  .app__navbar-links {
+    display: none;
+  }
+
+  .app__navbar-smallscreen {
+    display: flex;
+  }
+}
+
+@media (max-width: 650px) {
+  .app__navbar-login {
+    display: none;
+  }
+
+  .btn {
+    display: none;
+  }
+  .app__navbar-logo img {
+    width: 40px;
+  }
+}
